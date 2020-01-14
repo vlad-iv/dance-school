@@ -1,0 +1,2 @@
+dance-school-${application.title}${application.formatted-version}
+using spring boot${spring-boot.formatted-version}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="vladimir.ivanov" id="2" context="common">
+        <insert tableName="users">
+            <column name="id" valueNumeric="1"/>
+            <column name="login" value="admin"/>
+            <column name="password" value="admin"/>
+            <column name="role" value="USER,STUDENT,TEACHER,ADMIN"/>
+            <column name="email" value="ivanov.vladimir.l@gmail.com"/>
+            <column name="first_name" value="Admin"/>
+            <column name="last_name" value="Admin"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" valueNumeric="2"/>
+            <column name="login" value="ivanov"/>
+            <column name="password" value="ivanov"/>
+            <column name="role" value="USER,TEACHER"/>
+            <column name="email" value="ivanov.vladimir@yandex.ru"/>
+            <column name="first_name" value="Ivanov"/>
+            <column name="last_name" value="Vladimir"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

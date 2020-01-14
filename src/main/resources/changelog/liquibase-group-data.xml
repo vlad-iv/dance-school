@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="vladimir.ivanov" id="2" context="common">
+        <insert tableName="groups">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Yoga Beginner Morning"/>
+            <column name="style" value="Yoga"/>
+            <column name="level" value="Beginner"/>
+            <column name="start" valueDate="2020-01-01"/>
+            <column name="finish" valueDate="2020-05-01"/>
+            <column name="user_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="groups">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Hustle Beginner Weenend"/>
+            <column name="style" value="Hustle"/>
+            <column name="level" value="Beginner"/>
+            <column name="start" valueDate="2020-02-01"/>
+            <column name="finish" valueDate="2020-06-01"/>
+            <column name="user_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="groups">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Hustle Advansed Evening"/>
+            <column name="style" value="Hustle"/>
+            <column name="level" value="Advanced"/>
+            <column name="start" valueDate="2020-03-01"/>
+            <column name="finish" valueDate="2020-06-01"/>
+            <column name="user_id" valueNumeric="2"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

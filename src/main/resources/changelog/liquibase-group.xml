@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="vladimir.ivanov" id="1" context="common">
+        <createTable tableName="groups">
+            <column name="id" type="int8">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="pk_groups"/>
+            </column>
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="style" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="level" type="VARCHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="start" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="finish" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="int8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="active" type="bool" defaultValueBoolean="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="int4" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
