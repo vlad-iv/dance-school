@@ -10,9 +10,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -61,5 +61,9 @@ public class Group extends EntityBase {
 //                ", schedules=" + schedules +
 //                ", lessons=" + lessons +
                 '}';
+    }
+
+    public List<Lesson> getLessons() {
+        return Collections.emptyList();
     }
 }

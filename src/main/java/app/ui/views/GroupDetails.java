@@ -40,11 +40,11 @@ public final class GroupDetails extends VerticalLayout {
 
     public void initializePageData() {
         try {
-            var groupId = (String) ComponentUtil.getData(UI.getCurrent(), "groupId");
+            var groupId = (Long) ComponentUtil.getData(UI.getCurrent(), "groupId");
             if (groupId == null) {
                 throw new RuntimeException("Group ID was not passed between views!");
             }
-            var group = groupService.getGroup(Long.valueOf(groupId));
+            var group = groupService.getGroup(groupId);
             if (group == null) {
                 throw new RuntimeException("Group not found at the server");
             }

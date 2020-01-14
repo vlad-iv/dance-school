@@ -19,6 +19,7 @@ import com.vaadin.flow.router.Route;
 import org.springframework.security.access.annotation.Secured;
 
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 @Route(value = "group-list", layout = MainLayout.class)
 @PageTitle("Dance school - Group List")
@@ -84,13 +85,13 @@ public class GroupList extends VerticalLayout implements AfterNavigationObserver
         moduleGrid.addColumn(Lesson::getStudents).setFlexGrow(10);
         moduleGrid.setWidthFull();
         moduleGrid.setHeightByRows(true);
-//        moduleGrid.setItems(new ArrayList<>(selectedUnit.getLessons()));
+        moduleGrid.setItems(new ArrayList<>(selectedUnit.getLessons()));
 
         return new HorizontalLayout(detailsButton, moduleGrid);
     }
 
-    private void openUnitDetails(Long lesssonId) {
-        ComponentUtil.setData(UI.getCurrent(), "groupId", lesssonId);
+    private void openUnitDetails(Long groupId) {
+        ComponentUtil.setData(UI.getCurrent(), "groupId", groupId);
         UI.getCurrent().navigate(GroupDetails.class);
     }
 

@@ -12,6 +12,8 @@ This Dockerized SpringBoot-based service is provided:
 - Dance lessons
 - User management
 
+## Security
+Admin user: admin/admin
 
 ## Building and publishing JAR + Docker image
 This project is using the Maven dockerfile plugin.
