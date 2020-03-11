@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  app-server:
+    container_name: dance-server
+    build:
+      context: server
+      dockerfile: Dockerfile
+    ports:
+      - "80:8600"
+    restart: always
+#    depends_on:
+#      - db
+    environment:
+#      DATASOURCE_URL: jdbc:h2:mem:test;
+      DATASOURCE_URL: jdbc:h2:file:/data/test
+      DATASOURCE_USERNAME: sa
+      DATASOURCE_PASSWORD: sa
+    volumes:
+      - db-data:/data/test
+    networks:
+      - backend
+
+volumes:
+  db-data:
+
+networks:
+  backend:

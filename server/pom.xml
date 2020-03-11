@@ -8,10 +8,9 @@
         <version>2.2.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>app.dance</groupId>
-    <artifactId>school</artifactId>
+    <artifactId>server</artifactId>
     <version>0.0.1</version>
-    <name>school</name>
+    <name>server</name>
     <description>Dance school</description>
 
     <properties>
@@ -62,7 +61,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -137,30 +140,6 @@
                                 <phase>compile</phase>
                             </execution>
                         </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>com.spotify</groupId>
-                        <artifactId>dockerfile-maven-plugin</artifactId>
-                        <version>${dockerfile.maven.version}</version>
-                        <executions>
-                            <execution>
-                                <id>prod</id>
-                                <goals>
-                                    <goal>build</goal>
-                                    <goal>push</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <repository>${docker.project.repository}</repository>
-                            <tag>${project.version}</tag>
-                            <tag>latest</tag>
-                            <buildArgs>
-                                <PROJECT>${project.groupId}.${project.artifactId}</PROJECT>
-                                <SERVICE_PORT>${service.port}</SERVICE_PORT>
-                                <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
-                            </buildArgs>
-                        </configuration>
                     </plugin>
                 </plugins>
             </build>

@@ -1,8 +1,7 @@
+node_modules
 target/
-!.mvn/wrapper/maven-wrapper.jar
+!server/.mvn/wrapper/maven-wrapper.jar
 .idea
-*.iws
 *.iml
-*.ipr
 
 

@@ -21,5 +21,5 @@ All configuration can be found in the [Maven pom.xml](pom.xml) file
 with separate profiles for production and development.
 
 Example scripts to build the project:
-- [build-dev.cmd](build-dev.cmd) build with dev parameters and requires a separate lancher
-- [build-prod.cmd](build-prod.cmd) builds and publishes it to the docker repository
+- [build-dev.cmd](server/build-dev.cmd) build with dev parameters and requires a separate lancher
+- [build-prod.cmd](server/build-prod.cmd) builds and publishes it to the docker repository
